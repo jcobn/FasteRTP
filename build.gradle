@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
 group = 'me.jcobn'
@@ -15,12 +16,15 @@ repositories {
         name = 'sonatype'
         url = 'https://oss.sonatype.org/content/groups/public/'
     }
-    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven {
+        name "papermc"
+        url "https://papermc.io/repo/repository/maven-public/"
+    }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.18.1-R0.1-SNAPSHOT'
-    implementation 'io.papermc:paperlib:1.0.6'
+    implementation "io.papermc:paperlib:1.0.7"
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
@@ -48,4 +52,12 @@ processResources {
     filesMatching('plugin.yml') {
         expand props
     }
+}
+
+shadowJar {
+    relocate "io.papermc.lib", "me.jcobn.fastertp.paperlib"
+}
+
+artifacts {
+    archives shadowJar
 }

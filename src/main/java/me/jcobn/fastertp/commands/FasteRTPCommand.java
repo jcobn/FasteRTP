@@ -1,6 +1,7 @@
 package me.jcobn.fastertp.commands;
 
 import me.jcobn.fastertp.FasteRTP;
+import me.jcobn.fastertp.file.Messages;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
@@ -17,6 +18,7 @@ public class FasteRTPCommand implements TabExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        sender.sendMessage(String.format("Running FasteRTP v%s", plugin.getDescription().getVersion()));
         return true;
     }
 

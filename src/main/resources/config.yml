@@ -1,3 +1,11 @@
-Cooldown:
+# Here you can select the language
+# Currently supported languages
+# - English (en.yml)
+# - Czech (čeština) (cs.yml)
+# Put the language file name below (in the parentheses)
+# Help by translating the plugin to other languages here: https://crowdin.com/project/fastertp
+language: 'en.yml'
+
+cooldown:
   enabled: true
   seconds: 600

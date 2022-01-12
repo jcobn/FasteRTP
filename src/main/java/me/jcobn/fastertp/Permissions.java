@@ -6,8 +6,8 @@ import org.bukkit.entity.Player;
 public enum Permissions {
     RTP("rtp"),
     RTP_OTHER("rtp.others"),
-    BYPASS_COOLDOWN("bypass.cooldown"),
-    BYPASS_COUNTDOWN("bypass.countdown"),
+    BYPASS_COOLDOWN("cooldown.bypass"),
+    BYPASS_COUNTDOWN("countdown.bypass"),
     FASTERTP("info");
 
     private final String permPrefix = "fastertp.";

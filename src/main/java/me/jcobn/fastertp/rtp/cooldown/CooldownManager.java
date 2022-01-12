@@ -16,7 +16,7 @@ public class CooldownManager {
         this.plugin = plugin;
     }
 
-    private final Map<UUID, long> cooldownMap = new HashMap<UUID, long>();
+    private final Map<UUID, Long> cooldownMap = new HashMap<>();
 
     public void addCooldownToPlayer(Player player) {
         if (!plugin.getRtpConfig().getCooldownEnabled() || Permissions.BYPASS_COOLDOWN.check(player)) return;
@@ -39,6 +39,6 @@ public class CooldownManager {
     }
 
     private boolean exceptionFromCooldown(Player player) {
-        return !plugin.getConfig().getBoolean("Cooldown.enabled") || Permissions.BYPASS_COOLDOWN.check(player);
+        return !plugin.getConfig().getBoolean("cooldown.enabled") || Permissions.BYPASS_COOLDOWN.check(player);
     }
 }

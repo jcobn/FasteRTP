@@ -1,5 +1,6 @@
 package me.jcobn.fastertp.commands;
 
+import io.papermc.lib.PaperLib;
 import me.jcobn.fastertp.FasteRTP;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

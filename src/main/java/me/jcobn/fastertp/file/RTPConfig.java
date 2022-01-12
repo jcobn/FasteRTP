@@ -18,4 +18,8 @@ public class RTPConfig {
     public int getCooldownTime() {
         return plugin.getConfig().getInt("Cooldown.seconds");
     }
+
+    public String getLocale() {
+        return plugin.getConfig().getString("language");
+    }
 }
