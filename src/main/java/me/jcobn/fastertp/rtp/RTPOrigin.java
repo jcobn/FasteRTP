@@ -5,5 +5,6 @@ public enum RTPOrigin {
     COMMAND_OTHER,
     FIRST_JOIN,
     ON_DEATH,
-    GUI
+    GUI,
+    TEST
 }

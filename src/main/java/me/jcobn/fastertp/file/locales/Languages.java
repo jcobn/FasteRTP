@@ -2,7 +2,8 @@ package me.jcobn.fastertp.file.locales;
 
 public enum Languages {
     ENGLISH("en.yml"),
-    CZECH("cs.yml");
+    CZECH("cs.yml"),
+    CUSTOM("custom.yml");
 
     private final String fileName;
 

@@ -1,7 +1,8 @@
 # Here you can select the language
 # Currently supported languages
 # - English (en.yml)
-# - Czech (čeština) (cs.yml)
+# - Czech/čeština (cs.yml)
+# - Custom translation - you can edit the custom.yml into any language you want (custom.yml)
 # Put the language file name below (in the parentheses)
 # Help by translating the plugin to other languages here: https://crowdin.com/project/fastertp
 language: 'en.yml'
