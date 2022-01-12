@@ -1,0 +1,20 @@
+name: FasteRTP
+version: '${version}'
+main: me.jcobn.fastertp.FasteRTP
+api-version: 1.18
+authors: [ jcobn ]
+description: 1.18 Random teleport plugin
+website: https://www.jacobdev.tk;
+commands:
+  rtp:
+    aliases:
+      - wild
+  fastertp:
+    description: Main command for the FasteRTP plugin
+permissions:
+  fastertp.rtp:
+    description: Allows you to RTP yourself
+  fastertp.rtp.others:
+    description: Allows you to RTP other players
+  fastertp.info:
+    description: Info about the plugin (/fastertp)

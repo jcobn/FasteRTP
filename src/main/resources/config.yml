@@ -1,0 +1,3 @@
+Cooldown:
+  enabled: true
+  seconds: 600
