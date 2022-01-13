@@ -23,6 +23,18 @@ public class RTPConfig {
         return str("language");
     }
 
+    public boolean getWarmupEnabled() {
+        return bool("warmup.enabled");
+    }
+
+    public int getWarmupTime() {
+        return num("warmup.seconds");
+    }
+
+    public int getMaxAttempts() {
+        return num("rtp-settings.max-attempts");
+    }
+
     private String str(String path) {
         return plugin.getConfig().getString(path);
     }

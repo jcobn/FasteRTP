@@ -7,6 +7,17 @@
 # Help by translating the plugin to other languages here: https://crowdin.com/project/fastertp
 language: 'en.yml'
 
+rtp-settings:
+  max-attempts: 30
+
 cooldown:
   enabled: true
   seconds: 600
+
+economy:
+  enabled: false
+  price: 100.0
+
+warmup:
+  enabled: true
+  seconds: 5

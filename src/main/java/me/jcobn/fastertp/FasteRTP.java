@@ -9,8 +9,11 @@ import me.jcobn.fastertp.file.RTPConfig;
 import me.jcobn.fastertp.file.locales.LanguageManager;
 import me.jcobn.fastertp.file.locales.Languages;
 import me.jcobn.fastertp.network.Metrics;
+import me.jcobn.fastertp.rtp.RTP;
 import me.jcobn.fastertp.rtp.RTPManager;
 import me.jcobn.fastertp.rtp.cooldown.CooldownManager;
+import me.jcobn.fastertp.rtp.tp.LocationManager;
+import me.jcobn.fastertp.rtp.warmup.WarmupManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
@@ -26,7 +29,13 @@ public final class FasteRTP extends JavaPlugin {
     @Getter
     private final CooldownManager cooldownManager = new CooldownManager(this);
     @Getter
+    private final WarmupManager warmupManager = new WarmupManager(this);
+    @Getter
+    private final RTP rtp = new RTP(this);
+    @Getter
     private final RTPConfig rtpConfig = new RTPConfig(this);
+    @Getter
+    private final LocationManager locationManager = new LocationManager(this);
     @Getter
     private LanguageManager languageManager;
     @Getter

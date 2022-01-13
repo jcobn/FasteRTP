@@ -3,6 +3,13 @@ prefix: '&7[&3FasteRTP&7]&r '
 messages:
   rtp-self: '&6Byl jsi náhodně teleportován'
   no-permission: '&cNemůžete použít tento příkaz'
+  in-cooldown: '&cStále máš cooldown &7(%time%)'
+  in-warmup: '&cPočkejte, před použitím tohoto příkazu'
+  in-rtp: "&cPočkejte, až budete teleportován"
+  world-not-exist: "&cTento svět neexistuje"
+  cancelled-tp: '&cPohnul/a jste se, nebo jste dostal/a hit, ruším RTP'
+  dont-move-or-get-hit: "&6Teleportuji, nehýbejte se"
+  max-attempts: "&cNebylo možné vygenerovat bezpečnou lokaci"
 
 time:
   hours: 'hodin'

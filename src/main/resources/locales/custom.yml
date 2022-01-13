@@ -5,6 +5,13 @@ prefix: '&7[&3FasteRTP&7]&r '
 messages:
   rtp-self: '&6You were randomly teleported'
   no-permission: '&cYou do not have the permission to execute this command'
+  in-cooldown: '&cYou still have cooldown &7(%time%)'
+  in-warmup: '&cYou are still in warmup'
+  in-rtp: "&cYou are being teleported"
+  world-not-exist: "&cThis world doesn't exist"
+  cancelled-tp: '&cYou moved or got hit, cancelling RTP'
+  dont-move-or-get-hit: "&6Teleporting, don't move or get hit"
+  max-attempts: "&cCouldn't generate a safe location"
 
 time:
   hours: 'hours'

@@ -38,7 +38,11 @@ public class CooldownManager {
         return cooldown == 0L ? 0 : (int) ((cooldown - System.currentTimeMillis()) / 1000);
     }
 
-    private boolean exceptionFromCooldown(Player player) {
+    public boolean exceptionFromCooldown(Player player) {
         return !plugin.getConfig().getBoolean("cooldown.enabled") || Permissions.BYPASS_COOLDOWN.check(player);
+    }
+
+    public void removeFromCooldown(Player player) {
+        cooldownMap.remove(player.getUniqueId());
     }
 }

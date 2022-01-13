@@ -20,4 +20,12 @@ public class RTPManager {
     public boolean isPlayerRtping(Player player) {
         return rtping.contains(player.getUniqueId());
     }
+
+    public void addPlayerRtping(Player player) {
+        rtping.add(player.getUniqueId());
+    }
+
+    public void removePlayerRtping(Player player) {
+        rtping.remove(player.getUniqueId());
+    }
 }
