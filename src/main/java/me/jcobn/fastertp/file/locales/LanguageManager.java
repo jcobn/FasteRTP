@@ -37,4 +37,8 @@ public class LanguageManager {
     public String getTranslatedMessage(String path) {
         return localeFile.getString(path);
     }
+
+    public String getPrefix() {
+        return localeFile.getString("prefix");
+    }
 }

@@ -1,1 +1,4 @@
-rtp-self: '&bYou were randomly teleported'
+prefix: '&7[&3FasteRTP&7]&r '
+
+messages:
+  rtp-self: '&6You were randomly teleported'

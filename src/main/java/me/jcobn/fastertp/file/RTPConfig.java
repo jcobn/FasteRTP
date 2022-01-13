@@ -12,14 +12,26 @@ public class RTPConfig {
     }
 
     public boolean getCooldownEnabled() {
-        return plugin.getConfig().getBoolean("Cooldown.enabled");
+        return bool("cooldown.enabled");
     }
 
     public int getCooldownTime() {
-        return plugin.getConfig().getInt("Cooldown.seconds");
+        return num("cooldown.seconds");
     }
 
     public String getLocale() {
-        return plugin.getConfig().getString("language");
+        return str("language");
+    }
+
+    private String str(String path) {
+        return plugin.getConfig().getString(path);
+    }
+
+    private boolean bool(String path) {
+        return plugin.getConfig().getBoolean(path);
+    }
+
+    private int num(String path) {
+        return plugin.getConfig().getInt(path);
     }
 }
