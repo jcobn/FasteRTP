@@ -1,14 +1,22 @@
 package me.jcobn.fastertp.file;
 
+import lombok.Getter;
 import me.jcobn.fastertp.FasteRTP;
+import org.bukkit.Material;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class RTPConfig {
 
     private final FasteRTP plugin;
+    @Getter
+    private final List<Material> badBlocks = new ArrayList<>();
 
     public RTPConfig(FasteRTP plugin) {
         this.plugin = plugin;
+        setBadBlocks();
     }
 
     public boolean getCooldownEnabled() {
@@ -33,6 +41,18 @@ public class RTPConfig {
 
     public int getMaxAttempts() {
         return num("rtp-settings.max-attempts");
+    }
+
+    private void setBadBlocks() {
+        List<String> list = plugin.getConfig().getStringList("rtp-settings.bad-blocks");
+        for (String s : list) {
+            try {
+                Material mat = Material.matchMaterial(s);
+                badBlocks.add(mat);
+            } catch (Exception e) {
+                plugin.getLogger().severe("Wrong bad block name was used in the config");
+            }
+        }
     }
 
     private String str(String path) {

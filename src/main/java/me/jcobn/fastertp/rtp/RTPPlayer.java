@@ -56,7 +56,7 @@ public class RTPPlayer {
             //TODO: check claims here
             if (loc != null) {
                 //TODO: price
-                FasteRTP.getInstance().getRtp().teleportPlayer(player, sender, location, attempts, this);
+                FasteRTP.getInstance().getRtp().teleportPlayer(player, sender, loc, attempts, this);
             } else
                 rtp();
         });

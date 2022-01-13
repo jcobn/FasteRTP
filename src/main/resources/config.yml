@@ -9,6 +9,11 @@ language: 'en.yml'
 
 rtp-settings:
   max-attempts: 30
+  bad-blocks:
+    - LAVA
+    - WATER
+    - MAGMA_BLOCK
+    - CACTUS
 
 cooldown:
   enabled: true

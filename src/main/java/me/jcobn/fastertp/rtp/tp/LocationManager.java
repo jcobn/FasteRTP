@@ -17,8 +17,8 @@ public class LocationManager {
 
     public Location generateLocation(World world) {
         int quadrant = new Random().nextInt(4);
-        int min = 1000;
-        int max = 20000;
+        int min = 10;
+        int max = 200;
         int x, z;
         switch (quadrant) {
             case 0:
@@ -46,11 +46,12 @@ public class LocationManager {
         if (b.getType().toString().endsWith("AIR")) //<=1.15.1
             b = world.getBlockAt(x, b.getY() - 1, z);
         else if (!b.getType().isSolid()) {
-            //TODO: implement bad blocks
-            b = world.getBlockAt(x, b.getY() - 1, z);
+            if (!plugin.getRtpConfig().getBadBlocks().contains(b.getType())) {
+                b = world.getHighestBlockAt(x, z);
+            }
         }
-        //TODO: implement bad blocks
-        if (b.getY() > 0)
+        //TODO: improve location checking
+        if (b.getY() > -64 && !plugin.getRtpConfig().getBadBlocks().contains(b.getType()))
             return new Location(world, (x + 0.5), b.getY() + 1, (z + 0.5), yaw, pitch);
         return null;
     }
