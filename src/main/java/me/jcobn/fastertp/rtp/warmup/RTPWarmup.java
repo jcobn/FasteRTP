@@ -18,7 +18,7 @@ public class RTPWarmup implements Listener {
     public RTPWarmup(RTPPlayer rtpPlayer) {
         this.rtpPlayer = rtpPlayer;
 
-       rtpPlayer.beforeWarmup();
+        rtpPlayer.beforeWarmup();
         startDelay();
     }
 
@@ -31,8 +31,8 @@ public class RTPWarmup implements Listener {
     private void onMove(PlayerMoveEvent event) {
         if (event.getPlayer().getUniqueId() == rtpPlayer.player.getUniqueId()) {
             if (event.getTo() != null && (
-                    event.getFrom().getBlockX() != event.getTo().getBlockX() &&
-                            event.getFrom().getBlockY() != event.getTo().getBlockY() &&
+                    event.getFrom().getBlockX() != event.getTo().getBlockX() ||
+                            event.getFrom().getBlockY() != event.getTo().getBlockY() ||
                             event.getFrom().getBlockZ() != event.getTo().getBlockZ()
             )) {
                 cancel();

@@ -65,11 +65,12 @@ public class RTPPlayer {
 
     public void beforeRtp() {
         //TODO: implement
-        player.sendMessage("before rtp");
+        if(warmup)
+            player.sendMessage(Messages.BEFORE_WARMUP.getMessage());
     }
 
     public void afterTeleport() {
         //TODO: implement
-        player.sendMessage("after rtp");
+        player.sendMessage(Messages.RTP_SELF.getMessage());
     }
 }
