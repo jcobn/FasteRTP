@@ -7,7 +7,7 @@ public enum Permissions {
     RTP("rtp"),
     RTP_OTHER("rtp.others"),
     BYPASS_COOLDOWN("cooldown.bypass"),
-    BYPASS_COUNTDOWN("countdown.bypass"),
+    BYPASS_WARMUP("warmup.bypass"),
     FASTERTP("info");
 
     private final String permPrefix = "fastertp.";
@@ -18,7 +18,11 @@ public enum Permissions {
     }
 
     public boolean check(CommandSender sendi) {
-        if(sendi instanceof Player player) return player.hasPermission(permission);
+        if (sendi instanceof Player player) return player.hasPermission(permission);
         return true;
+    }
+
+    public boolean check(Player player) {
+        return player.hasPermission(permission);
     }
 }

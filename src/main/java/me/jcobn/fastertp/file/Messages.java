@@ -2,14 +2,14 @@ package me.jcobn.fastertp.file;
 
 import me.jcobn.fastertp.FasteRTP;
 import org.bukkit.ChatColor;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-
-import java.util.Objects;
 
 
 public enum Messages {
-    RTP_SELF("messages.rtp-self");
+    RTP_SELF("messages.rtp-self"),
+    NO_PERMISSION("messages.no-permission"),
+    TIME_HOURS("time.hours"),
+    TIME_MINUTES("time.minutes"),
+    TIME_SECONDS("time.seconds");
 
     private final String path;
 
@@ -18,27 +18,17 @@ public enum Messages {
     }
 
     public String getMessage() {
-        return msg(path);
+        return msg(path, false);
     }
 
-    public void send(CommandSender sendi) {
-        sendi.sendMessage(msg(path));
-    }
-
-    public void send(Player player) {
-        player.sendMessage(msg(path));
-    }
-
-    private String msg(String path) {
-        String message = FasteRTP.getInstance().getLanguageManager().getTranslatedMessage(path);
-        String prefix = FasteRTP.getInstance().getLanguageManager().getPrefix();
-        prefix = prefix.length() == 0 ? null : prefix;
-        return ChatColor.translateAlternateColorCodes('&', prefix == null ? message : prefix + message);
+    public String getMessage(boolean withoutPrefix) {
+        return msg(path, withoutPrefix);
     }
 
     private String msg(String path, boolean withoutPrefix) {
-        if (!withoutPrefix) return msg(path);
+        String prefix = FasteRTP.getInstance().getLanguageManager().getPrefix();
+        prefix = withoutPrefix ? null : prefix.length() == 0 ? null : prefix;
         String message = FasteRTP.getInstance().getLanguageManager().getTranslatedMessage(path);
-        return ChatColor.translateAlternateColorCodes('&', message);
+        return ChatColor.translateAlternateColorCodes('&', prefix == null ? message : prefix + message);
     }
 }

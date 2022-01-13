@@ -4,3 +4,9 @@ prefix: '&7[&3FasteRTP&7]&r '
 
 messages:
   rtp-self: '&6You were randomly teleported'
+  no-permission: '&cYou do not have the permission to execute this command'
+
+time:
+  hours: 'hours'
+  minutes: 'minutes'
+  seconds: 'seconds'
