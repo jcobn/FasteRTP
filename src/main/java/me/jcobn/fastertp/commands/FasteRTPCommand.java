@@ -19,7 +19,6 @@ public class FasteRTPCommand implements TabExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         sender.sendMessage(String.format("Running FasteRTP v%s", plugin.getDescription().getVersion()));
-        sender.sendMessage(Time.secondsToHumanReadableTime(Integer.parseInt(args[0])));
         return true;
     }
 
