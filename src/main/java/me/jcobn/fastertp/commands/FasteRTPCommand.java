@@ -1,7 +1,6 @@
 package me.jcobn.fastertp.commands;
 
 import me.jcobn.fastertp.FasteRTP;
-import me.jcobn.fastertp.util.Time;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;

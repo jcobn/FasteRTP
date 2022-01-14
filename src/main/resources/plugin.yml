@@ -16,5 +16,9 @@ permissions:
     description: Allows you to RTP yourself
   fastertp.rtp.others:
     description: Allows you to RTP other players
+  fastertp.cooldown.bypass:
+    description: Bypasses the RTP cooldown
+  fastertp.warmup.bypass:
+    description: Bypasses the RTP warmup
   fastertp.info:
     description: Info about the plugin (/fastertp)
