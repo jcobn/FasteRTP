@@ -30,7 +30,7 @@ public class RTPCommand implements TabExecutor {
         if (cSender instanceof Player sender) {
             switch (args.length) {
                 case 0:
-                    if(plugin.getRtpManager().isPlayerRtping(sender)) {
+                    if (plugin.getRtpManager().isPlayerRtping(sender)) {
                         sender.sendMessage(Messages.IN_RTP.getMessage());
                         return true;
                     }
@@ -45,7 +45,7 @@ public class RTPCommand implements TabExecutor {
                     if (!plugin.getCooldownManager().userHasCooldown(sender)) {
                         plugin.getRtp().tp(sender, sender, RTPOrigin.COMMAND_SELF, sender.getWorld().getName(), null, plugin.getWarmupManager().shouldWarmup(sender), !plugin.getCooldownManager().exceptionFromCooldown(sender));
                     } else {
-                        sender.sendMessage(Messages.IN_COOLDOWN.getMessage().replace("%time%", Time.secondsToHumanReadableTime(plugin.getCooldownManager().getUserCooldown(sender))));
+                        sender.sendMessage(Messages.IN_COOLDOWN.getMessage(Time.secondsToHumanReadableTime(plugin.getCooldownManager().getUserCooldown(sender))));
 
                     }
                     return true;

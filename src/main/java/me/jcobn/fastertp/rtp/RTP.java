@@ -59,11 +59,10 @@ public class RTP {
     }
 
     public void teleportPlayer(Player player,CommandSender sendi, Location location, int attempts, RTPPlayer rtpPlayer) {
-        Location pLoc = player.getLocation();
         //TODO: implement custom titles
         player.sendTitle("teleporting", "please wait", 5, 100, 5);
         List<CompletableFuture<Chunk>> asChunks = getChunks(location);
-
+//TODO: remove rtping and cooldown if player leaves
         CompletableFuture.allOf(asChunks.toArray(new CompletableFuture[]{})).thenRun(() -> {
             new BukkitRunnable() {
                 @Override
@@ -74,7 +73,7 @@ public class RTP {
                             public void run() {
                                 rtpPlayer.afterTeleport();
                                 if(player != sendi) {
-                                    player.sendMessage(Messages.RTP_SELF.getMessage());
+                                    //TODO: rtp other message?
                                 }
                                 plugin.getRtpManager().removePlayerRtping(player);
                                 //TODO: on first join handle spawnpoint

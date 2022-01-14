@@ -3,9 +3,11 @@
 prefix: '&7[&3FasteRTP&7]&r '
 
 messages:
-  rtp-self: '&6You were randomly teleported'
+  # {0} - Number of attempts when generating the location
+  rtp-self: '&6You were randomly teleported &7({0} attempt(s))'
   no-permission: '&cYou do not have the permission to execute this command'
-  in-cooldown: '&cYou still have cooldown &7(%time%)'
+  # {0} - The time in human readable format (eg. 3 hours 10 minutes)
+  in-cooldown: '&cYou still have cooldown &7({0})'
   in-warmup: '&cYou are still in warmup'
   in-rtp: "&cYou are being teleported"
   world-not-exist: "&cThis world doesn't exist"

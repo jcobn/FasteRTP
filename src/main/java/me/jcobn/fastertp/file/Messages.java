@@ -3,6 +3,8 @@ package me.jcobn.fastertp.file;
 import me.jcobn.fastertp.FasteRTP;
 import org.bukkit.ChatColor;
 
+import java.text.MessageFormat;
+
 
 public enum Messages {
     RTP_SELF("messages.rtp-self"),
@@ -24,18 +26,18 @@ public enum Messages {
         this.path = path;
     }
 
-    public String getMessage() {
-        return msg(path, false);
+    public String getMessage(Object... args) {
+        return msg(path, false, args);
     }
 
-    public String getMessage(boolean withoutPrefix) {
-        return msg(path, withoutPrefix);
+    public String getMessageNoPrefix(Object... args) {
+        return msg(path, true, args);
     }
 
-    private String msg(String path, boolean withoutPrefix) {
+    private String msg(String path, boolean withoutPrefix, Object... args) {
         String prefix = FasteRTP.getInstance().getLanguageManager().getPrefix();
         prefix = withoutPrefix ? null : prefix.length() == 0 ? null : prefix;
         String message = FasteRTP.getInstance().getLanguageManager().getTranslatedMessage(path);
-        return ChatColor.translateAlternateColorCodes('&', prefix == null ? message : prefix + message);
+        return MessageFormat.format(ChatColor.translateAlternateColorCodes('&', prefix == null ? message : prefix + message), args);
     }
 }

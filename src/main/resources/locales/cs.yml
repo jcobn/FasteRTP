@@ -1,9 +1,9 @@
 prefix: '&7[&3FasteRTP&7]&r '
 
 messages:
-  rtp-self: '&6Byl jsi náhodně teleportován'
+  rtp-self: '&6Byl jsi náhodně teleportován ({0} pokus(ů))'
   no-permission: '&cNemůžete použít tento příkaz'
-  in-cooldown: '&cStále máš cooldown &7(%time%)'
+  in-cooldown: '&cStále máš cooldown &7({0})'
   in-warmup: '&cPočkejte, před použitím tohoto příkazu'
   in-rtp: "&cPočkejte, až budete teleportován"
   world-not-exist: "&cTento svět neexistuje"

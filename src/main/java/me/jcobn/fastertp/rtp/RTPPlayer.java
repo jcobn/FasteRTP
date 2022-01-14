@@ -9,6 +9,7 @@ import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.security.MessageDigest;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -38,6 +39,11 @@ public class RTPPlayer {
     }
 
     public void rtp() {
+        if(!player.isOnline()) {
+            FasteRTP.getInstance().getRtpManager().removePlayerRtping(player);
+            FasteRTP.getInstance().getCooldownManager().removeFromCooldown(player);
+            return;
+        }
         if (attempts >= FasteRTP.getInstance().getRtpConfig().getMaxAttempts()) {
             player.sendMessage(Messages.MAX_ATTEMPTS.getMessage());
             FasteRTP.getInstance().getRtpManager().removePlayerRtping(player);
@@ -79,6 +85,6 @@ public class RTPPlayer {
      */
     public void afterTeleport() {
         //TODO: implement
-        player.sendMessage(Messages.RTP_SELF.getMessage() + " " + attempts + " attempts");
+        player.sendMessage(Messages.RTP_SELF.getMessage(String.valueOf(attempts)));
     }
 }
