@@ -40,6 +40,8 @@ public class RTPPlayer {
     public void rtp() {
         if (attempts >= FasteRTP.getInstance().getRtpConfig().getMaxAttempts()) {
             player.sendMessage(Messages.MAX_ATTEMPTS.getMessage());
+            FasteRTP.getInstance().getRtpManager().removePlayerRtping(player);
+            FasteRTP.getInstance().getCooldownManager().removeFromCooldown(player);
             return;
         }
         Location location;
@@ -63,14 +65,20 @@ public class RTPPlayer {
     }
 
 
+    /**
+     * Executes the instant before generating the location
+     */
     public void beforeRtp() {
         //TODO: implement
         if(warmup)
             player.sendMessage(Messages.BEFORE_WARMUP.getMessage());
     }
 
+    /**
+     * Executes the instant after teleporting the player
+     */
     public void afterTeleport() {
         //TODO: implement
-        player.sendMessage(Messages.RTP_SELF.getMessage());
+        player.sendMessage(Messages.RTP_SELF.getMessage() + " " + attempts + " attempts");
     }
 }
