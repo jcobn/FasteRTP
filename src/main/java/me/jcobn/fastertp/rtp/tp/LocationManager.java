@@ -50,7 +50,7 @@ public class LocationManager {
                 b = world.getHighestBlockAt(x, z);
             }
         }
-        //TODO: improve location checking
+
         if (b.getY() > -64 && !plugin.getRtpConfig().getBadBlocks().contains(b.getType()))
             return new Location(world, (x + 0.5), b.getY() + 1, (z + 0.5), yaw, pitch);
         return null;

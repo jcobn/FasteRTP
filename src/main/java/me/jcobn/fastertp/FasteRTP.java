@@ -14,6 +14,7 @@ import me.jcobn.fastertp.rtp.RTPManager;
 import me.jcobn.fastertp.rtp.cooldown.CooldownManager;
 import me.jcobn.fastertp.rtp.tp.LocationManager;
 import me.jcobn.fastertp.rtp.warmup.WarmupManager;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
@@ -50,6 +51,7 @@ public final class FasteRTP extends JavaPlugin {
         new Metrics(this, 13935);
 
         loadFiles();
+        checkConfigVersion();
     }
 
     private void loadFiles() {
@@ -79,6 +81,11 @@ public final class FasteRTP extends JavaPlugin {
             e.printStackTrace();
             getLogger().severe("Couldn't load config files");
         }
+    }
+
+    private void checkConfigVersion() {
+        if (!getConfig().getString("config-version").equalsIgnoreCase(getDescription().getVersion()))
+            getLogger().warning(ChatColor.RED + "The config.yml version seems to be outdated. Delete the config and restart the server to fix this");
     }
 
     public static FasteRTP getInstance() {

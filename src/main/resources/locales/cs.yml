@@ -1,7 +1,7 @@
 prefix: '&7[&3FasteRTP&7]&r '
 
 messages:
-  rtp-self: '&6Byl jsi náhodně teleportován &7({0} pokus(ů))'
+  rtp-self: '&6Byl/a jsi náhodně teleportován/a &cna X: {1} Y: {2} Z: {3} &7v {0} pokusu/ech'
   no-permission: '&cNemůžete použít tento příkaz'
   in-cooldown: '&cStále máš cooldown &7({0})'
   in-warmup: '&cPočkejte, před použitím tohoto příkazu'
@@ -10,6 +10,13 @@ messages:
   cancelled-tp: '&cPohnul/a jste se, nebo jste dostal/a hit, ruším RTP'
   warmup-start: "&6Teleportuji za &c{0} sekund&6, nehýbejte se"
   max-attempts: "&cNebylo možné vygenerovat bezpečnou lokaci"
+  before-generation: "&6Hledám bezpečnou náhodnou lokaci..."
+
+titles:
+  before-teleport:
+    # {0} - The number of attempts it took to generate the location
+    title: "&6Teleportuji..."
+    subtitle: "&7Bezpečná lokace byla nalezena v {0} pokusu/ech"
 
 time:
   hours: 'hodin'

@@ -57,11 +57,9 @@ public class RTP {
             rtpPlayer.rtp();
     }
 
-    public void teleportPlayer(Player player,CommandSender sendi, Location location, int attempts, RTPPlayer rtpPlayer) {
-        //TODO: implement custom titles
+    public void teleportPlayer(Player player, CommandSender sendi, Location location, int attempts, RTPPlayer rtpPlayer) {
         rtpPlayer.beforeTeleport();
         List<CompletableFuture<Chunk>> asChunks = getChunks(location);
-//TODO: remove rtping and cooldown if player leaves
         CompletableFuture.allOf(asChunks.toArray(new CompletableFuture[]{})).thenRun(() -> {
             new BukkitRunnable() {
                 @Override
@@ -70,8 +68,8 @@ public class RTP {
                         PaperLib.teleportAsync(player, location).thenRun(new BukkitRunnable() {
                             @Override
                             public void run() {
-                                rtpPlayer.afterTeleport();
-                                if(player != sendi) {
+                                rtpPlayer.afterTeleport(location);
+                                if (player != sendi) {
                                     //TODO: rtp other message?
                                 }
                                 plugin.getRtpManager().removePlayerRtping(player);

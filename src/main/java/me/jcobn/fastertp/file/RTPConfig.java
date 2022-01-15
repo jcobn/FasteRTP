@@ -55,6 +55,18 @@ public class RTPConfig {
         }
     }
 
+    public boolean getBeforeGenerationMsgEnabled() {
+        return bool("rtp-settings.before-generation.message");
+    }
+
+    public boolean getBeforeTeleportTitleEnabled() {
+        return bool("rtp-settings.before-teleport.title");
+    }
+
+    public boolean getAfterTeleportMsgEnabled() {
+        return bool("rtp-settings.after-teleport.message");
+    }
+
     private String str(String path) {
         return plugin.getConfig().getString(path);
     }

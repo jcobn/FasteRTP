@@ -70,23 +70,29 @@ public class RTPPlayer {
      * Executes the instant before generating the location
      */
     public void beforeGeneration() {
-        //TODO: implement
-        if (warmup)
-            player.sendMessage(Messages.BEFORE_WARMUP.getMessage(FasteRTP.getInstance().getRtpConfig().getWarmupTime()));
+        if (FasteRTP.getInstance().getRtpConfig().getBeforeGenerationMsgEnabled()) {
+            if (warmup)
+                player.sendMessage(Messages.BEFORE_WARMUP.getMessage(FasteRTP.getInstance().getRtpConfig().getWarmupTime()));
+            else
+                player.sendMessage(Messages.BEFORE_GENERATION.getMessage());
+        }
     }
 
     /**
      * Executes the instant after teleporting the player
      */
-    public void afterTeleport() {
-        //TODO: implement
-        player.sendMessage(Messages.RTP_SELF.getMessage(String.valueOf(attempts)));
+    public void afterTeleport(Location location) {
+        if (FasteRTP.getInstance().getRtpConfig().getAfterTeleportMsgEnabled()) {
+            player.sendMessage(Messages.RTP_SELF.getMessage(attempts, String.valueOf(location.getBlockX()), String.valueOf(location.getBlockY()), String.valueOf(location.getBlockZ())));
+        }
     }
 
     /**
      * Executes the instant before teleporting the player
      */
     public void beforeTeleport() {
-        player.sendTitle("teleporting", "please wait", 5, 100, 5);
+        if (FasteRTP.getInstance().getRtpConfig().getBeforeTeleportTitleEnabled()) {
+            player.sendTitle(Messages.BEFORE_TELEPORT_TITLE.getTitle(attempts).title, Messages.BEFORE_TELEPORT_TITLE.getTitle(attempts).subtitle, 5, 60, 5);
+        }
     }
 }

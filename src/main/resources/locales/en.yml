@@ -2,7 +2,10 @@ prefix: '&7[&3FasteRTP&7]&r '
 
 messages:
   # {0} - Number of attempts when generating the location
-  rtp-self: '&6You were randomly teleported &7({0} attempt(s))'
+  # {1} - X
+  # {2} - Y
+  # {3} - Z
+  rtp-self: '&6You were randomly teleported &cto X: {1} Y: {2} Z: {3} &7in {0} attempt(s)'
   no-permission: '&cYou do not have the permission to execute this command'
   # {0} - The time in human readable format (eg. 3 hours 10 minutes)
   in-cooldown: '&cYou still have cooldown &7({0})'
@@ -13,6 +16,13 @@ messages:
   # {0} - The number of seconds the warmup is set to in the config
   warmup-start: "&6Teleporting in &c{0} seconds&6, don't move or get hit"
   max-attempts: "&cCouldn't generate a safe location"
+  before-generation: "&6Finding a safe location to teleport you to..."
+
+titles:
+  before-teleport:
+    # {0} - The number of attempts it took to generate the location
+    title: "&6Teleporting..."
+    subtitle: "&7Found a safe location in {0} attempt(s)"
 
 time:
   hours: 'hours'

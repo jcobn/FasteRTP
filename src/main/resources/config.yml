@@ -8,12 +8,21 @@
 language: 'en.yml'
 
 rtp-settings:
+  # This is the max number of times the plugin will try to find a safe location
+  # Recommended: 30
   max-attempts: 30
   bad-blocks:
     - LAVA
     - WATER
     - MAGMA_BLOCK
     - CACTUS
+  # You can edit the messages and titles in the language files
+  before-generation:
+    message: true
+  before-teleport:
+    title: true
+  after-teleport:
+    message: true
 
 cooldown:
   enabled: true
@@ -26,3 +35,6 @@ economy:
 warmup:
   enabled: true
   seconds: 5
+
+# Don't change this
+config-version: 1.0.0
