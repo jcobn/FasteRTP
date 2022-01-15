@@ -10,7 +10,8 @@ messages:
   in-rtp: "&cYou are being teleported"
   world-not-exist: "&cThis world doesn't exist"
   cancelled-tp: '&cYou moved or got hit, cancelling RTP'
-  dont-move-or-get-hit: "&6Teleporting, don't move or get hit"
+  # {0} - The number of seconds the warmup is set to in the config
+  warmup-start: "&6Teleporting in &c{0} seconds&6, don't move or get hit"
   max-attempts: "&cCouldn't generate a safe location"
 
 time:

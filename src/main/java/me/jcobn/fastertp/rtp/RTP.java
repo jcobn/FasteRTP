@@ -50,12 +50,11 @@ public class RTP {
         if (rtpPlayer.cooldown)
             plugin.getCooldownManager().addCooldownToPlayer(rtpPlayer.player);
         plugin.getRtpManager().addPlayerRtping(rtpPlayer.player);
+        rtpPlayer.beforeGeneration();
         if (rtpPlayer.warmup)
             new RTPWarmup(rtpPlayer);
-        else {
-            rtpPlayer.beforeGeneration();
+        else
             rtpPlayer.rtp();
-        }
     }
 
     public void teleportPlayer(Player player,CommandSender sendi, Location location, int attempts, RTPPlayer rtpPlayer) {

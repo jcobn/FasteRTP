@@ -18,7 +18,7 @@ public class LocationManager {
     public Location generateLocation(World world) {
         int quadrant = new Random().nextInt(4);
         int min = 10;
-        int max = 200;
+        int max = 2000;
         int x, z;
         switch (quadrant) {
             case 0:

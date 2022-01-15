@@ -33,12 +33,8 @@ public class RTPPlayer {
         this.cooldown = cooldown;
     }
 
-    public void beforeWarmup() {
-        player.sendMessage(Messages.BEFORE_WARMUP.getMessage());
-    }
-
     public void rtp() {
-        if(!player.isOnline()) {
+        if (!player.isOnline()) {
             FasteRTP.getInstance().getRtpManager().removePlayerRtping(player);
             FasteRTP.getInstance().getCooldownManager().removeFromCooldown(player);
             return;
@@ -75,8 +71,8 @@ public class RTPPlayer {
      */
     public void beforeGeneration() {
         //TODO: implement
-        if(warmup)
-            player.sendMessage(Messages.BEFORE_WARMUP.getMessage());
+        if (warmup)
+            player.sendMessage(Messages.BEFORE_WARMUP.getMessage(FasteRTP.getInstance().getRtpConfig().getWarmupTime()));
     }
 
     /**

@@ -14,7 +14,7 @@ public enum Messages {
     IN_RTP("messages.in-rtp"),
     WORLD_DOESNT_EXIST("messages.world-not-exist"),
     CANCELLED_RTP("messages.cancelled-tp"),
-    BEFORE_WARMUP("messages.dont-move-or-get-hit"),
+    BEFORE_WARMUP("messages.warmup-start"),
     MAX_ATTEMPTS("messages.max-attempts"),
     TIME_HOURS("time.hours"),
     TIME_MINUTES("time.minutes"),

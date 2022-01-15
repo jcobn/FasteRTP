@@ -18,7 +18,6 @@ public class RTPWarmup implements Listener {
     public RTPWarmup(RTPPlayer rtpPlayer) {
         this.rtpPlayer = rtpPlayer;
 
-        rtpPlayer.beforeWarmup();
         startDelay();
     }
 
