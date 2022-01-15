@@ -9,7 +9,6 @@ import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.security.MessageDigest;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -17,17 +16,17 @@ public class RTPPlayer {
 
     public final Player player;
     public final CommandSender sender;
-    public final RTPOrigin orgin;
+    public final RTPOrigin origin;
     public final String world;
     public final List<String> biomes;
     public final boolean warmup;
     public final boolean cooldown;
     public int attempts;
 
-    public RTPPlayer(Player player, CommandSender sender, RTPOrigin orgin, String world, List<String> biomes, boolean warmup, boolean cooldown) {
+    public RTPPlayer(Player player, CommandSender sender, RTPOrigin origin, String world, List<String> biomes, boolean warmup, boolean cooldown) {
         this.player = player;
         this.sender = sender;
-        this.orgin = orgin;
+        this.origin = origin;
         this.world = world;
         this.biomes = biomes;
         this.warmup = warmup;
@@ -74,7 +73,7 @@ public class RTPPlayer {
     /**
      * Executes the instant before generating the location
      */
-    public void beforeRtp() {
+    public void beforeGeneration() {
         //TODO: implement
         if(warmup)
             player.sendMessage(Messages.BEFORE_WARMUP.getMessage());
@@ -86,5 +85,12 @@ public class RTPPlayer {
     public void afterTeleport() {
         //TODO: implement
         player.sendMessage(Messages.RTP_SELF.getMessage(String.valueOf(attempts)));
+    }
+
+    /**
+     * Executes the instant before teleporting the player
+     */
+    public void beforeTeleport() {
+        player.sendTitle("teleporting", "please wait", 5, 100, 5);
     }
 }

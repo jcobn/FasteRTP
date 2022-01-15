@@ -53,14 +53,14 @@ public class RTP {
         if (rtpPlayer.warmup)
             new RTPWarmup(rtpPlayer);
         else {
-            rtpPlayer.beforeRtp();
+            rtpPlayer.beforeGeneration();
             rtpPlayer.rtp();
         }
     }
 
     public void teleportPlayer(Player player,CommandSender sendi, Location location, int attempts, RTPPlayer rtpPlayer) {
         //TODO: implement custom titles
-        player.sendTitle("teleporting", "please wait", 5, 100, 5);
+        rtpPlayer.beforeTeleport();
         List<CompletableFuture<Chunk>> asChunks = getChunks(location);
 //TODO: remove rtping and cooldown if player leaves
         CompletableFuture.allOf(asChunks.toArray(new CompletableFuture[]{})).thenRun(() -> {
