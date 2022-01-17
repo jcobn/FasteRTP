@@ -87,8 +87,7 @@ public class RTP {
 
     private List<CompletableFuture<Chunk>> getChunks(Location loc) {
         List<CompletableFuture<Chunk>> asyncChunks = new ArrayList<>();
-        //TODO: 2nd min arg customizable
-        int range = Math.round(Math.max(0, Math.min(16, 4)));
+        int range = Math.round(Math.max(0, Math.min(16, FasteRTP.getInstance().getRtpConfig().getChunkPregenRadius())));
         for (int x = -range; x <= range; x++)
             for (int z = -range; z <= range; z++) {
                 Location locLoad = new Location(loc.getWorld(), loc.getX() + (x * 16), loc.getY(), loc.getZ() + (z * 16));

@@ -67,6 +67,10 @@ public class RTPConfig {
         return bool("rtp-settings.after-teleport.message");
     }
 
+    public int getChunkPregenRadius() {
+        return num("rtp-settings.chunk-pregen-radius");
+    }
+
     private String str(String path) {
         return plugin.getConfig().getString(path);
     }

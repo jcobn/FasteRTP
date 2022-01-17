@@ -11,6 +11,8 @@ rtp-settings:
   # This is the max number of times the plugin will try to find a safe location
   # Recommended: 30
   max-attempts: 30
+  # Min: 0 Max: 16
+  chunk-pregen-radius: 4
   bad-blocks:
     - LAVA
     - WATER
